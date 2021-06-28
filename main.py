@@ -9,6 +9,10 @@ def end(msg):
         return True
     return False
 
+def baka(msg):
+    if 'baka' in msg.lower():
+        return True
+    return False
 
 client = discord.Client()
 
@@ -24,5 +28,8 @@ async def on_message(message):
     if(end(message.content)):
         i = randint(0,3)
         await message.reply(Feur[i])
+    
+    if(baka(message.content)):
+        await message.reply(file=discord.File('BAKA.mp4'))
 
 client.run(os.environ['TOKEN'])
