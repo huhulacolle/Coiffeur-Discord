@@ -26,8 +26,7 @@ async def on_message(message):
         return
 
     if(end(message.content)):
-        i = randint(0,3)
-        await message.reply(Feur[i])
+        await message.reply(choice(Feur))
     
     if(baka(message.content)):
         await message.reply(file=discord.File('BAKA.mp4'))
