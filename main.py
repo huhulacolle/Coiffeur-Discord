@@ -14,6 +14,11 @@ def baka(msg):
         return True
     return False
 
+def dbl(id, msg):
+    if(str(id) in msg):
+        return True
+    return False
+
 client = discord.Client()
 
 @client.event
@@ -31,7 +36,7 @@ async def on_message(message):
     if(baka(message.content)):
         await message.reply(file=discord.File('BAKA.mp4'))
 
-    if(str(client.user.id) in message.content):
+    if(dbl(client.user.id, message.content)):
         await message.reply("Ptdr mais tu est débile je suis un bot je ne suis pas une vraie personne ça ne sert à rien de me parler mais vraiment ptdr tu est vraiment con")
 
 client.run(os.environ['TOKEN'])
