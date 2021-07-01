@@ -10,7 +10,7 @@ def end(msg):
     return False
 
 def baka(msg):
-    if 'baka' in msg.lower():
+    if ('baka' in msg.lower()):
         return True
     return False
 
@@ -30,5 +30,8 @@ async def on_message(message):
     
     if(baka(message.content)):
         await message.reply(file=discord.File('BAKA.mp4'))
+
+    if(str(client.user.id) in message.content):
+        await message.reply("Ptdr mais tu est débile je suis un bot je ne suis pas une vraie personne ça ne sert à rien de me parler mais vraiment ptdr tu est vraiment con")
 
 client.run(os.environ['TOKEN'])
