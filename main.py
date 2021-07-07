@@ -30,7 +30,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if(end(message.content)):
+    if(end(message.content.lower())):
         await message.reply(choice(Feur))
     
     if(baka(message.content)):
